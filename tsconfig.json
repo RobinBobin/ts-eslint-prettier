@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "outDir": "js",
+    "rootDir": "."
+  },
+  "extends": "./base.tsconfig.jsonc",
+  "files": [
+    ".prettierrc.mjs",
+    "eslint.config.mjs",
+    "namingConventionOptions.mjs"
+  ]
+}

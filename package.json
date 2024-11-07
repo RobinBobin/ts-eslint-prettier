@@ -1,0 +1,42 @@
+{
+  "author": "Ruben Shalimov",
+  "dependencies": {
+    "@eslint/js": "^9.13.0",
+    "@stylistic/eslint-plugin-js": "^2.10.1",
+    "@types/eslint__js": "^8.42.3",
+    "@types/eslint-config-prettier": "^6.11.3",
+    "@typescript-eslint/eslint-plugin": "^8.12.2",
+    "@typescript-eslint/parser": "^8.12.2",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-import-resolver-typescript": "^3.6.3",
+    "eslint-plugin-import-x": "^4.3.1",
+    "eslint-plugin-n": "^17.11.1",
+    "eslint-plugin-promise": "^7.1.0",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "typescript-eslint": "^8.11.0"
+  },
+  "description": "My configs for TS, ESLint and Prettier",
+  "files": [
+    "*.mjs",
+    "base.tsconfig.jsonc",
+    "js",
+    "postinstall.sh"
+  ],
+  "keywords": [
+    "TS",
+    "ESLint",
+    "Prettier"
+  ],
+  "name": "@robinbobin/ts-eslint-prettier",
+  "peerDependencies": {
+    "eslint": ">= 9",
+    "prettier": "^3.3.3",
+    "typescript": "^5.6.3"
+  },
+  "repository": "github:RobinBobin/ts-eslint-prettier.git",
+  "scripts": {
+    "postinstall": "./postinstall.sh",
+    "prepack": "./prepack.sh"
+  },
+  "version": "1.0.0"
+}
