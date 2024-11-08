@@ -1,4 +1,5 @@
 #!/bin/bash
-npx tsc
-npx eslint .
-npx prettier . --check
+rm -rf js &&
+pnpm tsc &&
+pnpm eslint &&
+pnpm prettier . --check

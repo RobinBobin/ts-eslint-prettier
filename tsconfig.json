@@ -6,9 +6,5 @@
     "rootDir": "."
   },
   "extends": "./base.tsconfig.jsonc",
-  "files": [
-    ".prettierrc.mjs",
-    "eslint.config.mjs",
-    "namingConventionOptions.mjs"
-  ]
+  "include": ["**/*.mjs"]
 }

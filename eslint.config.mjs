@@ -1,5 +1,3 @@
-/* eslint-disable id-length */
-
 import eslintJs from '@eslint/js'
 import stylisticJs from '@stylistic/eslint-plugin-js'
 import tsParser from '@typescript-eslint/parser'
@@ -13,7 +11,12 @@ import {
   configs as typescriptEslintConfigs
 } from 'typescript-eslint'
 
-import { NAMING_CONVENTION_OPTIONS } from './namingConventionOptions.mjs'
+import {
+  importX,
+  js,
+  simpleImportSort,
+  ts
+} from './eslintRuleOptions/index.mjs'
 
 export default typescriptEslintConfig(
   eslintJs.configs.recommended,
@@ -50,63 +53,37 @@ export default typescriptEslintConfig(
       '@typescript-eslint/consistent-type-imports': 'error',
       '@typescript-eslint/default-param-last': 'error',
       '@typescript-eslint/explicit-function-return-type': 'error',
-      '@typescript-eslint/max-params': ['error', { max: 4 }],
+      '@typescript-eslint/max-params': ['error', ts.maxParams],
       '@typescript-eslint/method-signature-style': 'error',
-      '@typescript-eslint/naming-convention': [
-        'error',
-        ...NAMING_CONVENTION_OPTIONS
-      ],
+      '@typescript-eslint/naming-convention': ['error', ...ts.namingConvention],
       '@typescript-eslint/no-confusing-void-expression': [
         'error',
-        {
-          ignoreArrowShorthand: true,
-          ignoreVoidOperator: true
-        }
+        ts.noConfusingVoidExpression
       ],
       '@typescript-eslint/no-loop-func': 'error',
-      '@typescript-eslint/no-magic-numbers': [
-        'error',
-        {
-          ignoreArrayIndexes: true,
-          ignoreClassFieldInitialValues: true,
-          ignoreDefaultValues: true,
-          ignoreEnums: true,
-          ignoreReadonlyClassProperties: true,
-          ignoreTypeIndexes: true
-        }
-      ],
-      '@typescript-eslint/no-shadow': [
-        'error',
-        {
-          builtinGlobals: true,
-          ignoreFunctionTypeParameterNameValueShadow: false,
-          ignoreTypeValueShadow: false
-        }
-      ],
+      '@typescript-eslint/no-magic-numbers': ['error', ts.noMagicNumbers],
+      '@typescript-eslint/no-shadow': ['error', ts.noShadow],
       '@typescript-eslint/no-unnecessary-parameter-property-assignment':
         'error',
       '@typescript-eslint/no-unnecessary-qualifier': 'error',
-      '@typescript-eslint/no-unused-vars': [
-        'error',
-        { caughtErrorsIgnorePattern: 'error' }
-      ],
+      '@typescript-eslint/no-unused-vars': ['error', ts.noUnusedVars],
       '@typescript-eslint/no-use-before-define': [
         'error',
-        { ignoreTypeReferences: false }
+        ts.noUseBeforeDefine
       ],
       '@typescript-eslint/no-useless-empty-export': 'error',
       '@typescript-eslint/prefer-readonly': 'error',
       '@typescript-eslint/prefer-readonly-parameter-types': 'error',
       '@typescript-eslint/restrict-template-expressions': [
         'error',
-        { allowNumber: true }
+        ts.restrictTemplateExpressions
       ],
       '@typescript-eslint/strict-boolean-expressions': 'error',
       '@typescript-eslint/switch-exhaustiveness-check': 'error',
 
       // @eslint/js
       'accessor-pairs': 'error',
-      'array-callback-return': ['error', { checkForEach: true }],
+      'array-callback-return': ['error', js.arrayCallbackReturn],
       camelcase: 'error',
       complexity: 'error',
       'consistent-return': 'error',
@@ -119,12 +96,12 @@ export default typescriptEslintConfig(
       'func-names': 'error',
       'grouped-accessor-pairs': ['error', 'getBeforeSet'],
       'guard-for-in': 'error',
-      'id-length': ['error', { max: 30, min: 2 }],
+      'id-length': ['error', js.idLength],
       'max-depth': 'error',
       'max-lines': 'error',
-      'max-lines-per-function': ['error', { max: 65 }],
+      'max-lines-per-function': ['error', js.maxLinesPerFunction],
       'max-nested-callbacks': 'error',
-      'max-statements': ['error', { max: 20 }],
+      'max-statements': ['error', js.maxStatements],
       'new-cap': 'error',
       'no-array-constructor': 'error',
       'no-await-in-loop': 'error',
@@ -178,14 +155,7 @@ export default typescriptEslintConfig(
       'prefer-template': 'error',
       'require-atomic-updates': 'error',
       'require-await': 'error',
-      'sort-keys': [
-        'error',
-        'asc',
-        {
-          allowLineSeparatedGroups: true,
-          natural: true
-        }
-      ],
+      'sort-keys': ['error', 'asc', js.sortKeys],
       'symbol-description': 'error',
       yoda: 'error',
 
@@ -203,12 +173,7 @@ export default typescriptEslintConfig(
       'import-x/no-mutable-exports': 'error',
       'import-x/no-self-import': 'error',
       'import-x/no-unassigned-import': 'error',
-      'import-x/no-unused-modules': [
-        'error',
-        {
-          missingExports: true
-        }
-      ],
+      'import-x/no-unused-modules': ['error', importX.noUnusedModules],
       'import-x/no-useless-path-segments': 'error',
 
       //eslint-plugin-promise
@@ -219,17 +184,7 @@ export default typescriptEslintConfig(
 
       // eslint-plugin-simple-import-sort
       'simple-import-sort/exports': 'error',
-      'simple-import-sort/imports': [
-        'error',
-        {
-          groups: [
-            ['^@?\\w.*\\u0000$', '^[^.].*\\u0000$', '^\\..*\\u0000$'],
-            ['^\\u0000'],
-            ['^'],
-            ['^\\.']
-          ]
-        }
-      ]
+      'simple-import-sort/imports': ['error', simpleImportSort.imports]
     }
   }
 )

@@ -19,6 +19,7 @@
   "files": [
     "*.mjs",
     "base.tsconfig.jsonc",
+    "eslintRuleOptions",
     "js",
     "postinstall.sh"
   ],
@@ -35,7 +36,7 @@
   },
   "repository": "github:RobinBobin/ts-eslint-prettier.git",
   "scripts": {
-    "postinstall": "./postinstall.sh",
+    "postinstall": "chmod u+x postinstall.sh && ./postinstall.sh",
     "prepack": "./prepack.sh"
   },
   "version": "1.0.0",
