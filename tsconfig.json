@@ -3,6 +3,7 @@
     "declaration": true,
     "emitDeclarationOnly": true,
     "outDir": "js",
+    "preserveSymlinks": true,
     "rootDir": "."
   },
   "extends": "./base.tsconfig.jsonc",
