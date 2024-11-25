@@ -6,6 +6,6 @@
     "preserveSymlinks": true,
     "rootDir": "."
   },
-  "extends": "./base.tsconfig.jsonc",
+  "extends": "./tsconfig.base",
   "include": ["**/*.mjs"]
 }

@@ -1,4 +1,4 @@
-export default {
+export const imports = {
   groups: [
     ['^@?\\w.*\\u0000$', '^[^.].*\\u0000$', '^\\..*\\u0000$'],
     ['^\\u0000'],

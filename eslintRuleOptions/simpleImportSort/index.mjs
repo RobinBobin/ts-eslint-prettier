@@ -1,5 +1,5 @@
-import imports from './imports.mjs'
+import { imports } from './imports.mjs'
 
-export default {
+export const simpleImportSort = {
   imports
 }

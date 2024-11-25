@@ -1,6 +1,6 @@
 /* eslint-disable id-length */
 
-export default {
+export const noShadow = {
   builtinGlobals: true,
   ignoreFunctionTypeParameterNameValueShadow: false,
   ignoreTypeValueShadow: false

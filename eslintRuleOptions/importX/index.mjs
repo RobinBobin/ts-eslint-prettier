@@ -1,5 +1,5 @@
-import noUnusedModules from './noUnusedModules.mjs'
+import { noUnusedModules } from './noUnusedModules.mjs'
 
-export default {
+export const importX = {
   noUnusedModules
 }

@@ -1,5 +1,5 @@
 import eslintJs from '@eslint/js'
-import stylisticJs from '@stylistic/eslint-plugin-js'
+import stylistic from '@stylistic/eslint-plugin'
 import tsParser from '@typescript-eslint/parser'
 import eslintConfigPrettier from 'eslint-config-prettier'
 import eslintPluginImportX from 'eslint-plugin-import-x'
@@ -15,6 +15,7 @@ import {
   importX,
   js,
   simpleImportSort,
+  stylistic as stylisticOptions,
   ts
 } from './eslintRuleOptions/index.mjs'
 
@@ -41,12 +42,17 @@ export default typescriptEslintConfig(
       }
     },
     plugins: {
-      '@stylistic/js': stylisticJs,
+      '@stylistic': stylistic,
       'simple-import-sort': eslintPluginSimpleImportSort
     },
     rules: {
-      // @stylistic/js
-      '@stylistic/js/no-trailing-spaces': 'error',
+      // @stylistic
+      '@stylistic/jsx-curly-brace-presence': [
+        'error',
+        stylisticOptions.jsxCurlyBracePresence
+      ],
+      '@stylistic/jsx-pascal-case': 'error',
+      '@stylistic/jsx-sort-props': ['error', stylisticOptions.jsxSortProps],
 
       // typescript-eslint
       '@typescript-eslint/class-methods-use-this': 'error',

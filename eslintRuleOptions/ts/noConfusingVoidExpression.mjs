@@ -1,4 +1,4 @@
-export default {
+export const noConfusingVoidExpression = {
   ignoreArrowShorthand: true,
   ignoreVoidOperator: true
 }

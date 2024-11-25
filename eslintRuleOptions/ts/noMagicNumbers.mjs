@@ -1,4 +1,4 @@
-export default {
+export const noMagicNumbers = {
   ignoreArrayIndexes: true,
   ignoreClassFieldInitialValues: true,
   ignoreDefaultValues: true,

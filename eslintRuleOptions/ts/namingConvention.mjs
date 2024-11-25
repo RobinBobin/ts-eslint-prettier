@@ -1,6 +1,6 @@
 /* eslint-disable sort-keys */
 
-export default [
+export const namingConvention = [
   {
     selector: 'interface',
     format: ['PascalCase'],
