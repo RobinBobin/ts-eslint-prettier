@@ -17,11 +17,11 @@
   },
   "description": "My configs for TS, ESLint and Prettier",
   "files": [
-    "*.mjs",
-    "tsconfig.base.json",
+    "./*.mjs",
     "eslintRuleOptions",
     "js",
-    "postinstall.sh"
+    "postinstall.sh",
+    "tsconfig.base.json"
   ],
   "keywords": [
     "TS",
@@ -40,5 +40,5 @@
     "postinstall": "chmod u+x postinstall.sh && ./postinstall.sh",
     "prepack": "./prepack.sh"
   },
-  "version": "2.0.0"
+  "version": "2.1.0"
 }
