@@ -15,6 +15,23 @@ export const namingConvention = [
     selector: 'variable',
     types: ['boolean'],
     format: ['PascalCase'],
-    prefix: ['are', 'is', 'should', 'has', 'have', 'can', 'did', 'will']
+    prefix: [
+      'are',
+      'ARE_',
+      'is',
+      'IS_',
+      'should',
+      'SHOULD_',
+      'has',
+      'HAS_',
+      'have',
+      'HAVE_',
+      'can',
+      'CAN_',
+      'did',
+      'DID_',
+      'will',
+      'WILL_'
+    ]
   }
 ]
