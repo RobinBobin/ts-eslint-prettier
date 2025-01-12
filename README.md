@@ -19,7 +19,7 @@ Assuming you have the `src` folder at the top of your project:
         "outDir": "js"
       },
       "extends": "@robinbobin/ts-eslint-prettier/tsconfig.base",
-      "include": ["./*.mjs", ".src/**/*.ts"]
+      "include": ["./*.mjs", "./src/**/*.ts"]
     }
 
 For React (Native) projects:
@@ -29,7 +29,7 @@ For React (Native) projects:
         "outDir": "js"
       },
       "extends": "@robinbobin/ts-eslint-prettier/tsconfig.base",
-      "include": ["./*.mjs", ".src/**/*.ts", "./src/**/*.tsx"]
+      "include": ["./*.mjs", "./src/**/*.ts", "./src/**/*.tsx"]
     }
 
 ## eslint.config.mjs
