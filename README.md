@@ -16,6 +16,7 @@ Assuming you have the `src` folder at the top of your project:
 
     {
       "compilerOptions": {
+        "declaration": true,
         "outDir": "js"
       },
       "extends": "@robinbobin/ts-eslint-prettier/tsconfig.base",
@@ -26,6 +27,7 @@ For React (Native) projects:
 
     {
       "compilerOptions": {
+        "declaration": true,
         "outDir": "js"
       },
       "extends": "@robinbobin/ts-eslint-prettier/tsconfig.base",
@@ -68,6 +70,15 @@ For React (Native) projects:
 
     /js
     node_modules
+
+# package.json
+
+Add the the following to `package.json`:
+
+    "files": [
+      "/js",
+      "/src"
+    ]
 
 # Scripts
 
