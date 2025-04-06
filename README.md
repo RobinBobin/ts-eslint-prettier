@@ -42,6 +42,19 @@ For React (Native) projects:
       ...eslintConfig,
     ]
 
+If you're getting
+
+    The inferred type of 'array' cannot be named without a reference to '.pnpm/@typescript-eslint+utils...'
+
+:
+
+    import eslintConfig from '@robinbobin/ts-eslint-prettier/eslint.config.mjs'
+
+    /** @type unknown[] */
+    const array = [...eslintConfig]
+
+    export default array
+
 For React (Native) projects:
 
     import config from '@robinbobin/ts-eslint-prettier/eslint.config.mjs'
