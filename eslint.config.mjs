@@ -2,7 +2,7 @@ import eslintJs from '@eslint/js'
 import stylistic from '@stylistic/eslint-plugin'
 import tsParser from '@typescript-eslint/parser'
 import eslintConfigPrettier from 'eslint-config-prettier'
-import eslintPluginImportX from 'eslint-plugin-import-x'
+import { flatConfigs as eslintPluginImportXFlatConfigs } from 'eslint-plugin-import-x'
 // @ts-expect-error Could not find a declaration file for module 'eslint-plugin-promise'
 import eslintPluginPromise from 'eslint-plugin-promise'
 import eslintPluginSimpleImportSort from 'eslint-plugin-simple-import-sort'
@@ -22,8 +22,8 @@ import {
 export default typescriptEslintConfig(
   eslintJs.configs.recommended,
   eslintConfigPrettier,
-  eslintPluginImportX.flatConfigs.recommended,
-  eslintPluginImportX.flatConfigs.typescript,
+  eslintPluginImportXFlatConfigs.recommended,
+  eslintPluginImportXFlatConfigs.typescript,
   // eslint-disable-next-line @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-unsafe-member-access
   eslintPluginPromise.configs['flat/recommended'],
   ...typescriptEslintConfigs.strictTypeChecked,
@@ -42,6 +42,7 @@ export default typescriptEslintConfig(
       }
     },
     plugins: {
+      // @ts-expect-error Type 'Rules' is not assignable to type 'Record<string, LooseRuleDefinition>'
       '@stylistic': stylistic,
       'simple-import-sort': eslintPluginSimpleImportSort
     },
