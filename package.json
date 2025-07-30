@@ -40,5 +40,5 @@
     "postinstall": "chmod u+x postinstall.sh && ./postinstall.sh",
     "prepack": "./prepack.sh"
   },
-  "version": "3.0.0"
+  "version": "3.1.0"
 }
